@@ -445,15 +445,27 @@
     });
   }
 
-  // Smooth anchor scrolling
+  // Safe vertical-only smooth scrolling without horizontal sway or header overlap
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
-      if (href === '#' || href.length < 2) return;
+      if (!href || href === '#' || href.length < 2) return;
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const headerEl = document.querySelector('.site-header');
+        const headerH = headerEl ? headerEl.offsetHeight : 64;
+        const quickNavEl = document.querySelector('.quick-nav-wrapper');
+        const quickNavH = quickNavEl ? quickNavEl.offsetHeight : 48;
+        const totalOffset = headerH + quickNavH + 8;
+
+        const targetTop = target.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop) - totalOffset;
+
+        window.scrollTo({
+          top: Math.max(0, targetTop),
+          left: 0,
+          behavior: 'smooth'
+        });
       }
     });
   });
