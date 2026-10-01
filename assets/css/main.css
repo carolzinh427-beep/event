@@ -12,8 +12,8 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding-top: calc(var(--space-4xl) + 20px);
-  padding-bottom: var(--space-2xl);
+  padding-top: calc(var(--header-height, 64px) + var(--space-xl));
+  padding-bottom: var(--space-xl);
   overflow: hidden;
   background-color: var(--color-bg-dark);
 }
@@ -155,9 +155,9 @@
 
 .hero-ticker-text {
   font-family: var(--font-sans);
-  font-size: clamp(0.6rem, 2.8vw, 0.74rem);
+  font-size: clamp(0.58rem, 2.5vw, 0.74rem);
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: clamp(0.04em, 1.2vw, 0.12em);
   text-transform: uppercase;
   color: var(--color-gold-light);
   white-space: nowrap;
@@ -222,14 +222,14 @@
 /* Prepared Pillars Highlight */
 .space-pillars-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-md);
   margin-bottom: var(--space-xl);
 }
 
 @media (min-width: 768px) {
   .space-pillars-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
@@ -446,7 +446,7 @@
 
 .instagram-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-xs);
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -455,7 +455,7 @@
 
 @media (min-width: 768px) {
   .instagram-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 

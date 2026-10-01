@@ -78,4 +78,8 @@
 
   /* Touch Target Minimum */
   --touch-target: 48px;
+
+  /* Mobile Layout Dimensions */
+  --header-height: 64px;
+  --quick-nav-height: 48px;
 }

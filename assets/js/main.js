@@ -39,13 +39,26 @@
   const toastNotice = document.getElementById('toastNotice');
 
   // ==========================================================================
-  // HEADER SCROLL OBSERVER
+  // HEADER SCROLL OBSERVER (REQUEST ANIMATION FRAME THROTTLED - ZERO JITTER)
   // ==========================================================================
+  let isHeaderScrolled = false;
+  let scrollTicking = false;
+
   function handleHeaderScroll() {
-    if (window.scrollY > 40) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
+    if (!scrollTicking) {
+      window.requestAnimationFrame(function () {
+        const scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 30;
+        if (scrolled !== isHeaderScrolled) {
+          isHeaderScrolled = scrolled;
+          if (isHeaderScrolled) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+        }
+        scrollTicking = false;
+      });
+      scrollTicking = true;
     }
   }
   window.addEventListener('scroll', handleHeaderScroll, { passive: true });
@@ -58,7 +71,7 @@
     drawerBackdrop.classList.add('open');
     menuToggle.classList.add('active');
     menuToggle.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('drawer-open');
   }
 
   function closeDrawer() {
@@ -66,7 +79,7 @@
     drawerBackdrop.classList.remove('open');
     menuToggle.classList.remove('active');
     menuToggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
+    document.body.classList.remove('drawer-open');
   }
 
   if (menuToggle) {
@@ -140,27 +153,36 @@
   });
 
   // ==========================================================================
-  // QUICK NAV ACTIVE HIGHLIGHT ON SCROLL
+  // QUICK NAV ACTIVE HIGHLIGHT (INTERSECTION OBSERVER - 0 REFLOWS, 60/120 FPS)
   // ==========================================================================
-  const sections = document.querySelectorAll('section[id]');
-  function highlightQuickNav() {
-    const scrollY = window.pageYOffset + 120;
-    sections.forEach(function (current) {
-      const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop;
-      const sectionId = current.getAttribute('id');
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        quickNavItems.forEach(function (item) {
-          if (item.getAttribute('href') === '#' + sectionId) {
-            item.classList.add('active');
-          } else {
-            item.classList.remove('active');
-          }
-        });
-      }
+  const navSections = document.querySelectorAll('main section[id], section#inicio');
+
+  if ('IntersectionObserver' in window && quickNavItems.length > 0) {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    };
+
+    const sectionObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.getAttribute('id');
+          quickNavItems.forEach(function (item) {
+            if (item.getAttribute('href') === '#' + sectionId) {
+              item.classList.add('active');
+            } else {
+              item.classList.remove('active');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    navSections.forEach(function (sec) {
+      sectionObserver.observe(sec);
     });
   }
-  window.addEventListener('scroll', highlightQuickNav, { passive: true });
 
   // ==========================================================================
   // GALLERY (2 COLUMNS) & LIGHTBOX
@@ -215,13 +237,13 @@
     lightboxImg.alt = img.alt;
     lightboxCaption.textContent = caption;
     lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('modal-open');
   }
 
   function closeLightbox() {
     if (lightbox) {
       lightbox.classList.remove('open');
-      document.body.style.overflow = '';
+      document.body.classList.remove('modal-open');
     }
   }
 
@@ -423,7 +445,17 @@
     });
   }
 
-  // Initialize
-  updateGalleryCounter();
+  // Smooth anchor scrolling
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href === '#' || href.length < 2) return;
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
 
 })();
