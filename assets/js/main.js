@@ -163,13 +163,9 @@
   window.addEventListener('scroll', highlightQuickNav, { passive: true });
 
   // ==========================================================================
-  // GALLERY CAROUSEL & LIGHTBOX
+  // GALLERY (2 COLUMNS) & LIGHTBOX
   // ==========================================================================
-  const gallerySlider = document.getElementById('gallerySlider');
-  const gallerySlides = document.querySelectorAll('.gallery-slide');
-  const galleryPrev = document.getElementById('galleryPrev');
-  const galleryNext = document.getElementById('galleryNext');
-  const galleryCounter = document.getElementById('galleryCounter');
+  const galleryCards = document.querySelectorAll('.gallery-card');
   const filterBtns = document.querySelectorAll('.gallery-filter-btn');
 
   const lightbox = document.getElementById('lightboxModal');
@@ -180,56 +176,7 @@
   const lightboxNext = document.getElementById('lightboxNext');
 
   let currentGalleryIndex = 0;
-  let visibleSlides = Array.from(gallerySlides);
-
-  function updateGalleryCounter() {
-    if (galleryCounter && visibleSlides.length > 0) {
-      galleryCounter.textContent = `${currentGalleryIndex + 1} / ${visibleSlides.length}`;
-    }
-  }
-
-  function scrollToGallerySlide(index) {
-    if (index < 0) index = 0;
-    if (index >= visibleSlides.length) index = visibleSlides.length - 1;
-    currentGalleryIndex = index;
-    const targetSlide = visibleSlides[currentGalleryIndex];
-    if (targetSlide && gallerySlider) {
-      gallerySlider.scrollTo({
-        left: targetSlide.offsetLeft,
-        behavior: 'smooth'
-      });
-    }
-    updateGalleryCounter();
-  }
-
-  if (galleryPrev) {
-    galleryPrev.addEventListener('click', function () {
-      scrollToGallerySlide(currentGalleryIndex - 1);
-    });
-  }
-
-  if (galleryNext) {
-    galleryNext.addEventListener('click', function () {
-      scrollToGallerySlide(currentGalleryIndex + 1);
-    });
-  }
-
-  // Update index on manual scroll / swipe
-  if (gallerySlider) {
-    let scrollTimeout;
-    gallerySlider.addEventListener('scroll', function () {
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(function () {
-        const scrollLeft = gallerySlider.scrollLeft;
-        const slideWidth = gallerySlider.offsetWidth;
-        const newIndex = Math.round(scrollLeft / slideWidth);
-        if (newIndex !== currentGalleryIndex && newIndex >= 0 && newIndex < visibleSlides.length) {
-          currentGalleryIndex = newIndex;
-          updateGalleryCounter();
-        }
-      }, 80);
-    }, { passive: true });
-  }
+  let visibleCards = Array.from(galleryCards);
 
   // Category Filter
   filterBtns.forEach(function (btn) {
@@ -238,28 +185,31 @@
       this.classList.add('active');
 
       const filter = this.getAttribute('data-filter');
-      gallerySlides.forEach(function (slide) {
-        const category = slide.getAttribute('data-category');
+      galleryCards.forEach(function (card) {
+        const category = card.getAttribute('data-category');
         if (filter === 'all' || category === filter) {
-          slide.style.display = 'block';
+          card.style.display = 'block';
         } else {
-          slide.style.display = 'none';
+          card.style.display = 'none';
         }
       });
 
-      visibleSlides = Array.from(gallerySlides).filter(s => s.style.display !== 'none');
+      visibleCards = Array.from(galleryCards).filter(c => c.style.display !== 'none');
       currentGalleryIndex = 0;
-      scrollToGallerySlide(0);
-      updateGalleryCounter();
     });
   });
 
   // Lightbox functionality
   function openLightbox(index) {
-    const slide = visibleSlides[index];
-    if (!slide) return;
-    const img = slide.querySelector('img');
-    const caption = slide.getAttribute('data-title') || img.alt;
+    if (visibleCards.length === 0) return;
+    if (index < 0) index = visibleCards.length - 1;
+    if (index >= visibleCards.length) index = 0;
+    currentGalleryIndex = index;
+
+    const card = visibleCards[currentGalleryIndex];
+    if (!card) return;
+    const img = card.querySelector('img');
+    const caption = card.getAttribute('data-title') || img.alt;
 
     lightboxImg.src = img.src;
     lightboxImg.alt = img.alt;
@@ -269,15 +219,16 @@
   }
 
   function closeLightbox() {
-    lightbox.classList.remove('open');
-    document.body.style.overflow = '';
+    if (lightbox) {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
   }
 
-  gallerySlides.forEach(function (slide) {
-    slide.addEventListener('click', function () {
-      const index = visibleSlides.indexOf(this);
+  galleryCards.forEach(function (card) {
+    card.addEventListener('click', function () {
+      const index = visibleCards.indexOf(this);
       if (index !== -1) {
-        currentGalleryIndex = index;
         openLightbox(index);
       }
     });
@@ -298,16 +249,14 @@
   if (lightboxPrev) {
     lightboxPrev.addEventListener('click', function (e) {
       e.stopPropagation();
-      currentGalleryIndex = (currentGalleryIndex - 1 + visibleSlides.length) % visibleSlides.length;
-      openLightbox(currentGalleryIndex);
+      openLightbox(currentGalleryIndex - 1);
     });
   }
 
   if (lightboxNext) {
     lightboxNext.addEventListener('click', function (e) {
       e.stopPropagation();
-      currentGalleryIndex = (currentGalleryIndex + 1) % visibleSlides.length;
-      openLightbox(currentGalleryIndex);
+      openLightbox(currentGalleryIndex + 1);
     });
   }
 
@@ -327,19 +276,15 @@
   }
 
   function handleSwipe() {
-    const threshold = 50;
+    const threshold = 40;
     if (touchEndX < touchStartX - threshold) {
-      // Swiped left -> Next
-      if (lightbox.classList.contains('open')) {
-        currentGalleryIndex = (currentGalleryIndex + 1) % visibleSlides.length;
-        openLightbox(currentGalleryIndex);
+      if (lightbox && lightbox.classList.contains('open')) {
+        openLightbox(currentGalleryIndex + 1);
       }
     }
     if (touchEndX > touchStartX + threshold) {
-      // Swiped right -> Prev
-      if (lightbox.classList.contains('open')) {
-        currentGalleryIndex = (currentGalleryIndex - 1 + visibleSlides.length) % visibleSlides.length;
-        openLightbox(currentGalleryIndex);
+      if (lightbox && lightbox.classList.contains('open')) {
+        openLightbox(currentGalleryIndex - 1);
       }
     }
   }

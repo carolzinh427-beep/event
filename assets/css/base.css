@@ -13,6 +13,9 @@ html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 body {
@@ -23,7 +26,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
   position: relative;
+  touch-action: pan-y;
+  overscroll-behavior-x: none;
   /* Safe-area bottom padding to account for fixed WhatsApp bar on mobile */
   padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px));
 }
