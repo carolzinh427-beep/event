@@ -151,10 +151,10 @@
       const sectionId = current.getAttribute('id');
       if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
         quickNavItems.forEach(function (item) {
-          item.classList.remove('active');
           if (item.getAttribute('href') === '#' + sectionId) {
             item.classList.add('active');
-            item.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+          } else {
+            item.classList.remove('active');
           }
         });
       }
