@@ -1,0 +1,16 @@
+{
+  "name": "Espaço de Eventos Samuel Lucas",
+  "short_name": "Samuel Lucas",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#141312",
+  "theme_color": "#141312",
+  "description": "Espaço de Eventos Samuel Lucas. Um ambiente para casamentos, aniversários, 15 anos e celebrações especiais.",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

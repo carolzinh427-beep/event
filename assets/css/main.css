@@ -1,0 +1,522 @@
+/* ==========================================================================
+   ESPAÇO DE EVENTOS SAMUEL LUCAS - MAIN STYLES
+   ========================================================================== */
+
+/* ==========================================================================
+   HERO MOBILE (PRIMARY FOCUS)
+   ========================================================================== */
+
+.hero-section {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-top: calc(var(--space-4xl) + 20px);
+  padding-bottom: var(--space-2xl);
+  overflow: hidden;
+  background-color: var(--color-bg-dark);
+}
+
+.hero-media-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  transform: scale(1.02);
+  transition: transform 8s ease-out;
+}
+
+/* Luxury Multi-layer Gradient Overlay for Pristine Readability */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 13, 12, 0.45) 0%,
+    rgba(14, 13, 12, 0.25) 30%,
+    rgba(14, 13, 12, 0.7) 65%,
+    rgba(14, 13, 12, 0.96) 95%
+  );
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  color: var(--color-text-light);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    min-height: 90vh;
+    justify-content: center;
+    padding-top: var(--space-4xl);
+    padding-bottom: var(--space-4xl);
+  }
+
+  .hero-content {
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+    gap: var(--space-lg);
+  }
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  margin-bottom: 2px;
+}
+
+.hero-eyebrow::after {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--color-gold);
+}
+
+.hero-title {
+  font-size: clamp(2.35rem, 8.5vw, 4.4rem);
+  font-weight: 500;
+  color: #FFFFFF;
+  line-height: 1.12;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+}
+
+.hero-lead {
+  font-size: clamp(1rem, 3.8vw, 1.25rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 560px;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 768px) {
+  .hero-lead {
+    margin: 0 auto;
+  }
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-top: var(--space-xs);
+}
+
+@media (min-width: 540px) {
+  .hero-actions {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hero-actions .btn {
+    width: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-actions {
+    justify-content: center;
+  }
+}
+
+/* Bottom Event Ticker Bar */
+.hero-bottom-ticker {
+  position: relative;
+  z-index: 3;
+  margin-top: var(--space-xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-ticker-text {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  white-space: nowrap;
+  opacity: 0.9;
+}
+
+/* ==========================================================================
+   SECTION: O ESPAÇO
+   ========================================================================== */
+
+.space-showcase-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-card);
+  margin-bottom: var(--space-2xl);
+}
+
+.space-photo-container {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  position: relative;
+  background-color: #1a1a1a;
+}
+
+@media (min-width: 768px) {
+  .space-photo-container {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.space-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.space-photo-container:hover .space-photo {
+  transform: scale(1.02);
+}
+
+.space-text-wrapper {
+  padding: var(--space-xl) var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .space-text-wrapper {
+    padding: var(--space-2xl);
+  }
+}
+
+.space-text-wrapper p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: var(--space-lg);
+}
+
+/* Prepared Pillars Highlight */
+.space-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .space-pillars-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.space-pillar-item {
+  background: var(--color-bg-alt);
+  padding: var(--space-md);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.space-pillar-title {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold-dark);
+  margin-bottom: 4px;
+}
+
+.space-pillar-desc {
+  font-size: 0.84rem;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   SECTION: EXPERIÊNCIA
+   ========================================================================== */
+
+.experience-box {
+  background-color: var(--color-bg-dark);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(197, 168, 128, 0.25);
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .experience-box {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .experience-media,
+  .experience-content {
+    flex: 1;
+  }
+}
+
+.experience-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background-color: #121212;
+}
+
+.experience-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.experience-content {
+  padding: var(--space-xl) var(--space-lg);
+  color: var(--color-text-light);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .experience-content {
+    padding: var(--space-3xl);
+  }
+}
+
+.experience-content h2 {
+  color: #FFFFFF;
+}
+
+.experience-content p {
+  color: var(--color-text-light-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   SECTION: CTA DE ORÇAMENTO (HIGH IMPACT)
+   ========================================================================== */
+
+.cta-banner {
+  background: linear-gradient(135deg, #181716 0%, #242220 100%);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl) var(--space-lg);
+  border: 1px solid rgba(197, 168, 128, 0.3);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  color: #FFFFFF;
+  margin-bottom: var(--space-2xl);
+}
+
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(197, 168, 128, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-banner h2 {
+  color: #FFFFFF;
+  margin-bottom: var(--space-xs);
+}
+
+.cta-banner p {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 520px;
+  margin: 0 auto var(--space-xl);
+  font-size: 1.05rem;
+}
+
+.cta-banner-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+@media (min-width: 540px) {
+  .cta-banner-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   SECTION: LOCALIZAÇÃO
+   ========================================================================== */
+
+.location-card {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .location-card {
+    flex-direction: row;
+  }
+
+  .location-info,
+  .location-map-wrap {
+    flex: 1;
+  }
+}
+
+.location-info {
+  padding: var(--space-xl) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.location-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-gold-dark);
+}
+
+.location-map-wrap {
+  aspect-ratio: 16 / 10;
+  background: #EAE6DF;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.map-placeholder-box {
+  text-align: center;
+  padding: var(--space-lg);
+  color: var(--color-text-muted);
+}
+
+.map-placeholder-icon {
+  font-size: 2.2rem;
+  color: var(--color-gold-dark);
+  margin-bottom: var(--space-2xs);
+}
+
+/* ==========================================================================
+   SECTION: INSTAGRAM
+   ========================================================================== */
+
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xs);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .instagram-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.instagram-thumb {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  position: relative;
+  background-color: #222;
+}
+
+.instagram-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.instagram-thumb:hover img {
+  transform: scale(1.06);
+}
+
+.instagram-thumb-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  color: #FFFFFF;
+  font-size: 1.4rem;
+}
+
+.instagram-thumb:hover .instagram-thumb-overlay {
+  opacity: 1;
+}
+
+/* Success Toast Feedback */
+.toast-notice {
+  position: fixed;
+  bottom: 84px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background-color: var(--color-bg-dark);
+  color: #FFFFFF;
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-gold);
+  box-shadow: var(--shadow-lg);
+  font-size: 0.9rem;
+  font-weight: 500;
+  z-index: var(--z-toast);
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.toast-notice.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

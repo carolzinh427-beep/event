@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" width="320" height="64">
+  <defs>
+    <linearGradient id="goldGradLg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EAD1AA"/>
+      <stop offset="50%" stop-color="#C5A880"/>
+      <stop offset="100%" stop-color="#9C7949"/>
+    </linearGradient>
+  </defs>
+  <!-- Monogram Crest -->
+  <g transform="translate(6, 4)">
+    <circle cx="28" cy="28" r="26" fill="#171717" stroke="url(#goldGradLg)" stroke-width="1.2"/>
+    <circle cx="28" cy="28" r="23" fill="none" stroke="url(#goldGradLg)" stroke-width="0.6" stroke-dasharray="1.5 2" stroke-opacity="0.6"/>
+    <text x="28" y="34" text-anchor="middle" font-family="'Playfair Display', 'Cinzel', 'Georgia', serif" font-size="18" font-weight="600" fill="url(#goldGradLg)" letter-spacing="1">SL</text>
+  </g>
+  <!-- Text Brand -->
+  <g transform="translate(72, 16)">
+    <text x="0" y="16" font-family="'Playfair Display', 'Cinzel', 'Georgia', serif" font-size="18" font-weight="600" fill="#1C1B19" letter-spacing="3.5">SAMUEL LUCAS</text>
+    <text x="1" y="31" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="8.5" font-weight="500" fill="#A88B63" letter-spacing="4">ESPAÇO DE EVENTOS</text>
+  </g>
+</svg>

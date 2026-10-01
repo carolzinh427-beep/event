@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Espaço de Eventos Samuel Lucas | Eventos e Celebrações</title>
+  <meta name="description" content="Espaço de Eventos Samuel Lucas. Um ambiente para casamentos, aniversários, 15 anos e celebrações especiais.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#141312">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Espaço de Eventos Samuel Lucas | Eventos e Celebrações">
+  <meta property="og:description" content="Espaço de Eventos Samuel Lucas. Um ambiente para casamentos, aniversários, 15 anos e celebrações especiais.">
+  <meta property="og:image" content="assets/images/hero-mobile.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Espaço de Eventos Samuel Lucas | Eventos e Celebrações">
+  <meta name="twitter:description" content="Espaço de Eventos Samuel Lucas. Um ambiente para casamentos, aniversários, 15 anos e celebrações especiais.">
+  <meta name="twitter:image" content="assets/images/hero-mobile.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <!-- Structured Data JSON-LD for Local Business / Event Venue -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EventVenue",
+    "name": "Espaço de Eventos Samuel Lucas",
+    "description": "Espaço de Eventos Samuel Lucas. Um ambiente para casamentos, aniversários, 15 anos e celebrações especiais.",
+    "url": "https://espacosamuellucas.com.br",
+    "image": "assets/images/hero-mobile.jpg"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <a href="#inicio" class="brand-link" aria-label="Espaço de Eventos Samuel Lucas - Início">
+        <img src="assets/images/logo-light.svg" alt="Espaço de Eventos Samuel Lucas" class="brand-logo-img">
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="desktop-nav" aria-label="Navegação Principal Desktop">
+        <a href="#inicio">Início</a>
+        <a href="#espaco">O Espaço</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#estrutura">Estrutura</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#orcamento">Orçamento</a>
+        <a href="#localizacao">Localização</a>
+        <a href="#orcamento" class="btn btn-primary btn-sm">Solicitar Orçamento</a>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navDrawer">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <nav class="nav-drawer" id="navDrawer" aria-label="Menu Mobile">
+    <div class="drawer-links">
+      <a href="#inicio">Início</a>
+      <a href="#espaco">O Espaço</a>
+      <a href="#eventos">Eventos</a>
+      <a href="#estrutura">Estrutura</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#orcamento">Orçamento</a>
+      <a href="#localizacao">Localização</a>
+    </div>
+
+    <div class="drawer-cta">
+      <a href="#orcamento" class="btn btn-primary btn-full">Solicitar Orçamento</a>
+      <a href="#orcamento" class="btn btn-whatsapp btn-full js-whatsapp-link" data-message="Olá! Gostaria de solicitar um orçamento para realizar meu evento no Espaço de Eventos Samuel Lucas.">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Falar pelo WhatsApp
+      </a>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer Backdrop -->
+  <div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
+
+  <!-- ==========================================================================
+       HERO MOBILE (PRIMARY FOCUS)
+       ========================================================================== -->
+  <section class="hero-section" id="inicio">
+    <div class="hero-media-wrapper">
+      <img src="assets/images/hero-mobile.jpg" alt="Fachada e salão iluminado do Espaço de Eventos Samuel Lucas" class="hero-bg-img" fetchpriority="high">
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container hero-content">
+      <span class="hero-eyebrow">Espaço de Eventos</span>
+      <h1 class="hero-title">Espaço de Eventos Samuel Lucas</h1>
+      <p class="hero-lead">"Seu momento merece um espaço inesquecível."</p>
+      <p class="text-light-muted" style="max-width: 520px; font-size: 0.95rem;">Um espaço preparado para transformar sua celebração em uma experiência especial.</p>
+
+      <div class="hero-actions">
+        <a href="#orcamento" class="btn btn-primary">Solicitar Orçamento</a>
+        <a href="#espaco" class="btn btn-secondary">Conhecer o Espaço</a>
+      </div>
+
+      <div class="hero-bottom-ticker">
+        <span class="hero-ticker-text">Casamentos • Aniversários • 15 Anos • Eventos</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       BARRA DE NAVEGAÇÃO MOBILE (QUICK HORIZONTAL SUB-NAV)
+       ========================================================================== -->
+  <div class="quick-nav-wrapper">
+    <nav class="quick-nav-bar" aria-label="Navegação Rápida">
+      <a href="#eventos" class="quick-nav-item">Eventos</a>
+      <a href="#espaco" class="quick-nav-item">O Espaço</a>
+      <a href="#galeria" class="quick-nav-item">Galeria</a>
+      <a href="#orcamento" class="quick-nav-item">Orçamento</a>
+    </nav>
+  </div>
+
+  <main id="conteudo-principal">
+
+    <!-- ==========================================================================
+         SEÇÃO DE EVENTOS
+         ========================================================================== -->
+    <section class="section" id="eventos">
+      <div class="container">
+        <header class="section-header text-center">
+          <span class="text-overline">Celebrações Exclusivas</span>
+          <h2>Encontre o espaço para o seu momento</h2>
+          <p>Cada celebração tem uma história. Encontre o cenário ideal para viver a sua.</p>
+        </header>
+
+        <div class="events-grid">
+          <!-- Card: Casamentos -->
+          <article class="event-card">
+            <div class="event-card-media">
+              <img src="assets/images/casamentos.jpg" alt="Recepção de Casamento no Espaço Samuel Lucas" loading="lazy">
+              <span class="event-card-badge">Casamentos</span>
+            </div>
+            <div class="event-card-body">
+              <div>
+                <h3>Casamentos</h3>
+                <p>"Um cenário especial para celebrar o seu grande dia."</p>
+              </div>
+              <div class="event-card-action">
+                <a href="#orcamento" class="btn btn-secondary-dark btn-sm btn-full" data-event-context="casamento">Conhecer</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card: Aniversários -->
+          <article class="event-card">
+            <div class="event-card-media">
+              <img src="assets/images/aniversarios.jpg" alt="Celebração de Aniversário no Espaço Samuel Lucas" loading="lazy">
+              <span class="event-card-badge">Aniversários</span>
+            </div>
+            <div class="event-card-body">
+              <div>
+                <h3>Aniversários</h3>
+                <p>"Comemore seus momentos especiais ao lado de quem você ama."</p>
+              </div>
+              <div class="event-card-action">
+                <a href="#orcamento" class="btn btn-secondary-dark btn-sm btn-full" data-event-context="aniversario">Conhecer</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card: 15 Anos -->
+          <article class="event-card">
+            <div class="event-card-media">
+              <img src="assets/images/15-anos.jpg" alt="Festa de 15 Anos no Espaço Samuel Lucas" loading="lazy">
+              <span class="event-card-badge">15 Anos</span>
+            </div>
+            <div class="event-card-body">
+              <div>
+                <h3>15 Anos</h3>
+                <p>"Uma celebração marcante para um momento único."</p>
+              </div>
+              <div class="event-card-action">
+                <a href="#orcamento" class="btn btn-secondary-dark btn-sm btn-full" data-event-context="15-anos">Conhecer</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card: Eventos Corporativos -->
+          <article class="event-card">
+            <div class="event-card-media">
+              <img src="assets/images/corporativo.jpg" alt="Eventos Corporativos no Espaço Samuel Lucas" loading="lazy">
+              <span class="event-card-badge">Corporativo</span>
+            </div>
+            <div class="event-card-body">
+              <div>
+                <h3>Eventos Corporativos</h3>
+                <p>"Um ambiente preparado para encontros, celebrações e eventos."</p>
+              </div>
+              <div class="event-card-action">
+                <a href="#orcamento" class="btn btn-secondary-dark btn-sm btn-full" data-event-context="corporativo">Conhecer</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         O ESPAÇO
+         ========================================================================== -->
+    <section class="section section-alt" id="espaco">
+      <div class="container">
+        <header class="section-header text-center">
+          <span class="text-overline">Conheça o Local</span>
+          <h2>Um espaço para viver grandes momentos</h2>
+        </header>
+
+        <div class="space-showcase-card">
+          <!-- Foto Grande Primeiro -->
+          <div class="space-photo-container">
+            <img src="assets/images/espaco-salao.jpg" alt="Salão principal e estrutura do Espaço de Eventos Samuel Lucas" class="space-photo" loading="lazy">
+          </div>
+
+          <!-- Texto Curto Sobre o Espaço -->
+          <div class="space-text-wrapper">
+            <p>
+              Planejado para acolher momentos memoráveis, o <strong>Espaço de Eventos Samuel Lucas</strong> oferece um ambiente que une sofisticação, amplitude e aconchego. Cada detalhe foi pensado para proporcionar conforto aos seus convidados e valorizar ao máximo a decoração e a atmosfera do seu evento.
+            </p>
+
+            <!-- Área Preparada para Destacar Estrutura, Conforto, Ambiente e Localização -->
+            <div class="space-pillars-grid">
+              <div class="space-pillar-item">
+                <div class="space-pillar-title">Estrutura</div>
+                <div class="space-pillar-desc">Ambientes amplos preparados para receber sua celebração.</div>
+              </div>
+
+              <div class="space-pillar-item">
+                <div class="space-pillar-title">Conforto</div>
+                <div class="space-pillar-desc">Bem-estar e comodidade para você e seus convidados.</div>
+              </div>
+
+              <div class="space-pillar-item">
+                <div class="space-pillar-title">Ambiente</div>
+                <div class="space-pillar-desc">Cenário acolhedor com iluminação e arquitetura moderna.</div>
+              </div>
+
+              <div class="space-pillar-item">
+                <div class="space-pillar-title">Localização</div>
+                <div class="space-pillar-desc">Fácil acesso para proporcionar tranquilidade na chegada.</div>
+              </div>
+            </div>
+
+            <div style="text-align: center;">
+              <a href="#orcamento" class="btn btn-primary">Conhecer o Espaço</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         GALERIA
+         ========================================================================== -->
+    <section class="section" id="galeria">
+      <div class="container">
+        <header class="section-header text-center">
+          <span class="text-overline">Registros Visuais</span>
+          <h2>Um cenário para o seu momento</h2>
+          <p>Fotos que transmitem a atmosfera inesquecível de celebrações realizadas no espaço.</p>
+        </header>
+
+        <div class="gallery-wrapper">
+          <!-- Category Filters -->
+          <div class="gallery-filters" role="tablist" aria-label="Filtros da galeria">
+            <button class="gallery-filter-btn active" data-filter="all">Todos</button>
+            <button class="gallery-filter-btn" data-filter="casamentos">Casamentos</button>
+            <button class="gallery-filter-btn" data-filter="aniversarios">Aniversários</button>
+            <button class="gallery-filter-btn" data-filter="15-anos">15 Anos</button>
+            <button class="gallery-filter-btn" data-filter="espaco">O Espaço</button>
+          </div>
+
+          <!-- Carousel Viewport -->
+          <div class="gallery-viewport">
+            <div class="gallery-slider" id="gallerySlider">
+              <div class="gallery-slide" data-category="casamentos" data-title="Casamento com jantar elegante e iluminação intimista">
+                <img src="assets/images/casamentos.jpg" alt="Mesa de convidados em recepção de casamento" loading="lazy">
+                <div class="gallery-slide-overlay">
+                  <span class="gallery-slide-tag">Casamentos</span>
+                  <span class="gallery-zoom-hint">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    Toque para ampliar
+                  </span>
+                </div>
+              </div>
+
+              <div class="gallery-slide" data-category="15-anos" data-title="Festa de 15 Anos em salão contemporâneo e sofisticado">
+                <img src="assets/images/15-anos.jpg" alt="Lounge e celebração de festa de 15 anos" loading="lazy">
+                <div class="gallery-slide-overlay">
+                  <span class="gallery-slide-tag">15 Anos</span>
+                  <span class="gallery-zoom-hint">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    Toque para ampliar
+                  </span>
+                </div>
+              </div>
+
+              <div class="gallery-slide" data-category="aniversarios" data-title="Celebração calorosa de aniversário entre amigos">
+                <img src="assets/images/aniversarios.jpg" alt="Brinde de aniversário com taças de espumante" loading="lazy">
+                <div class="gallery-slide-overlay">
+                  <span class="gallery-slide-tag">Aniversários</span>
+                  <span class="gallery-zoom-hint">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    Toque para ampliar
+                  </span>
+                </div>
+              </div>
+
+              <div class="gallery-slide" data-category="espaco" data-title="Salão principal com iluminação cenográfica e vista para jardim">
+                <img src="assets/images/espaco-salao.jpg" alt="Arquitetura do salão de festas com pé direito duplo" loading="lazy">
+                <div class="gallery-slide-overlay">
+                  <span class="gallery-slide-tag">O Espaço</span>
+                  <span class="gallery-zoom-hint">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    Toque para ampliar
+                  </span>
+                </div>
+              </div>
+
+              <div class="gallery-slide" data-category="espaco" data-title="Mesa posta e detalhes minuciosos de decoração">
+                <img src="assets/images/detalhe-decor.jpg" alt="Detalhe de mesa posta com flores brancas e taças de cristal" loading="lazy">
+                <div class="gallery-slide-overlay">
+                  <span class="gallery-slide-tag">O Espaço</span>
+                  <span class="gallery-zoom-hint">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    Toque para ampliar
+                  </span>
+                </div>
+              </div>
+
+              <div class="gallery-slide" data-category="espaco" data-title="Vista da fachada ao anoitecer com iluminação paisagística">
+                <img src="assets/images/hero-mobile.jpg" alt="Fachada iluminada do espaço de eventos" loading="lazy">
+                <div class="gallery-slide-overlay">
+                  <span class="gallery-slide-tag">O Espaço</span>
+                  <span class="gallery-zoom-hint">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    Toque para ampliar
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel Controls -->
+          <div class="gallery-controls">
+            <span class="gallery-counter" id="galleryCounter">1 / 6</span>
+            <div class="gallery-nav-buttons">
+              <button class="gallery-arrow-btn" id="galleryPrev" aria-label="Foto anterior">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <button class="gallery-arrow-btn" id="galleryNext" aria-label="Próxima foto">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         EXPERIÊNCIA
+         ========================================================================== -->
+    <section class="section section-dark" id="experiencia">
+      <div class="container">
+        <div class="experience-box">
+          <div class="experience-media">
+            <img src="assets/images/detalhe-decor.jpg" alt="Detalhe do ambiente e decoração requintada" loading="lazy">
+          </div>
+          <div class="experience-content">
+            <span class="text-overline" style="color: var(--color-gold-light);">Experiência Única</span>
+            <h2>Seu evento. Do seu jeito.</h2>
+            <p>Do primeiro detalhe ao grande momento, o espaço é o cenário onde sua história acontece.</p>
+            <div style="margin-top: var(--space-xs);">
+              <a href="#orcamento" class="btn btn-primary">Quero Conhecer</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ESTRUTURA
+         ========================================================================== -->
+    <section class="section" id="estrutura">
+      <div class="container">
+        <header class="section-header text-center">
+          <span class="text-overline">Planejado para Você</span>
+          <h2>Tudo começa pelo espaço</h2>
+          <p>Uma infraestrutura completa para transformar sua comemoração em um evento inesquecível.</p>
+        </header>
+
+        <div class="structure-grid">
+          <div class="structure-card">
+            <div class="structure-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3>Ambiente</h3>
+            <p>Salão elegante com excelente amplitude, acabamento sofisticado e integração harmoniosa para recepção dos convidados.</p>
+          </div>
+
+          <div class="structure-card">
+            <div class="structure-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            </div>
+            <h3>Estrutura</h3>
+            <p>Arquitetura moderna desenhada para comportar diferentes formatos de mesas, pista de dança, lounges e ilhas gastronômicas.</p>
+          </div>
+
+          <div class="structure-card">
+            <div class="structure-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3>Conforto</h3>
+            <p>Ambientes pensados para garantir fluidez de circulação, comodidade e uma recepção calorosa durante toda a celebração.</p>
+          </div>
+
+          <div class="structure-card">
+            <div class="structure-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h3>Localização</h3>
+            <p>Localização privilegiada e de fácil orientação para a chegada tranquila de seus familiares, convidados e prestadores.</p>
+          </div>
+
+          <div class="structure-card">
+            <div class="structure-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h3>Diferenciais</h3>
+            <p>Atendimento atencioso e suporte dedicado para auxiliar você no planejamento e no alinhamento de cada etapa do grande dia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         COMO FUNCIONA
+         ========================================================================== -->
+    <section class="section section-alt" id="como-funciona">
+      <div class="container">
+        <header class="section-header text-center">
+          <span class="text-overline">Passo a Passo</span>
+          <h2>Do primeiro contato ao grande dia</h2>
+          <p>Um processo simples e transparente para você planejar sua celebração com total tranquilidade.</p>
+        </header>
+
+        <div class="timeline-container">
+          <div class="timeline-step">
+            <div class="timeline-step-badge">01</div>
+            <div class="timeline-step-content">
+              <h3>Conte sobre seu evento.</h3>
+              <p>Envie as primeiras informações pelo WhatsApp ou formulário: data aproximada, tipo de celebração e convidados.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-badge">02</div>
+            <div class="timeline-step-content">
+              <h3>Conheça o espaço.</h3>
+              <p>Agende uma visita guiada para vivenciar a energia do local e imaginar cada instante do seu evento.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-badge">03</div>
+            <div class="timeline-step-content">
+              <h3>Receba sua proposta.</h3>
+              <p>Apresentamos uma proposta personalizada e sob medida para as características da sua comemoração.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-badge">04</div>
+            <div class="timeline-step-content">
+              <h3>Viva seu grande momento.</h3>
+              <p>Com tudo organizado, aproveite cada segundo do seu momento especial ao lado de quem você ama.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         DEPOIMENTOS (ESTRUTURA PREPARADA PARA AVALIAÇÕES REAIS)
+         ========================================================================== -->
+    <section class="section" id="depoimentos">
+      <div class="container">
+        <header class="section-header text-center">
+          <span class="text-overline">Experiências Reais</span>
+          <h2>Quem viveu, recomenda</h2>
+          <p>O carinho e a satisfação de quem confiou seu sonho ao Espaço Samuel Lucas.</p>
+        </header>
+
+        <div class="testimonial-container">
+          <div class="testimonial-stars" aria-label="Avaliação 5 de 5 estrelas">
+            ★★★★★
+          </div>
+          <blockquote class="testimonial-quote">
+            "Um espaço que supera todas as expectativas. Do atendimento inicial até o final da festa, tudo impecável. O cenário perfeito para o dia mais especial da nossa vida."
+          </blockquote>
+          <div class="testimonial-author">Celebração de Casamento</div>
+          <span class="testimonial-badge">Espaço preparado para depoimentos verificados</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CTA DE ORÇAMENTO & FORMULÁRIO MOBILE
+         ========================================================================== -->
+    <section class="section" id="orcamento">
+      <div class="container">
+        <!-- Bloco Visual Grande -->
+        <div class="cta-banner">
+          <h2>Vamos planejar seu evento?</h2>
+          <p>Conte um pouco sobre o que você está planejando e fale com nossa equipe.</p>
+          <div class="cta-banner-buttons">
+            <a href="#formulario-orcamento" class="btn btn-primary">Solicitar Orçamento</a>
+            <a href="#formulario-orcamento" class="btn btn-whatsapp js-whatsapp-link" data-message="Olá! Gostaria de solicitar um orçamento para realizar meu evento no Espaço de Eventos Samuel Lucas.">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              Falar pelo WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Formulário Mobile -->
+        <div class="budget-form-wrapper" id="formulario-orcamento">
+          <header style="margin-bottom: var(--space-lg); text-align: center;">
+            <h3 style="font-size: 1.55rem; margin-bottom: 6px;">Solicite seu Orçamento</h3>
+            <p style="font-size: 0.92rem;">Preencha os dados abaixo para receber nossa proposta diretamente no seu WhatsApp.</p>
+          </header>
+
+          <form id="budgetForm" novalidate>
+            <div class="form-group">
+              <label for="nomeInput" class="form-label">Nome Completo *</label>
+              <input type="text" id="nomeInput" class="form-input" placeholder="Seu nome" required autocomplete="name">
+            </div>
+
+            <div class="form-group">
+              <label for="whatsappInput" class="form-label">WhatsApp *</label>
+              <input type="tel" id="whatsappInput" class="form-input" placeholder="(DD) 99999-9999" required autocomplete="tel">
+            </div>
+
+            <div class="form-group">
+              <label for="tipoEvento" class="form-label">Tipo de Evento</label>
+              <!-- Seleção rápida por Chips no mobile -->
+              <div class="event-type-chips" role="group" aria-label="Selecione o tipo de evento">
+                <button type="button" class="chip-btn selected" data-value="casamento">Casamento</button>
+                <button type="button" class="chip-btn" data-value="aniversario">Aniversário</button>
+                <button type="button" class="chip-btn" data-value="15-anos">15 Anos</button>
+                <button type="button" class="chip-btn" data-value="corporativo">Evento Corporativo</button>
+                <button type="button" class="chip-btn" data-value="outro">Outro</button>
+              </div>
+
+              <!-- Select Nativo de Fallback e Acessibilidade -->
+              <select id="tipoEvento" class="form-select sr-only" tabindex="-1">
+                <option value="casamento" selected>Casamento</option>
+                <option value="aniversario">Aniversário</option>
+                <option value="15-anos">15 Anos</option>
+                <option value="corporativo">Evento Corporativo</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="dataInput" class="form-label">Data Desejada (Opcional)</label>
+              <input type="date" id="dataInput" class="form-input">
+            </div>
+
+            <div class="form-group">
+              <label for="convidadosInput" class="form-label">Número Estimado de Convidados</label>
+              <input type="number" id="convidadosInput" class="form-input" placeholder="Ex: 150 convidados" min="10" max="1000">
+            </div>
+
+            <div class="form-group">
+              <label for="mensagemInput" class="form-label">Mensagem Adicional (Opcional)</label>
+              <textarea id="mensagemInput" class="form-input form-textarea" placeholder="Conte mais detalhes sobre como sonha com a sua festa..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full" style="min-height: 54px; margin-top: var(--space-sm);">
+              Solicitar Orçamento
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         LOCALIZAÇÃO
+         ========================================================================== -->
+    <section class="section section-alt" id="localizacao">
+      <div class="container">
+        <header class="section-header text-center">
+          <span class="text-overline">Localização</span>
+          <h2>Como chegar</h2>
+          <p>Venha conhecer pessoalmente o cenário onde seu grande momento ganhará vida.</p>
+        </header>
+
+        <div class="location-card">
+          <div class="location-info">
+            <span class="location-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Endereço Oficial
+            </span>
+            <h3 style="font-size: 1.35rem;">Espaço de Eventos Samuel Lucas</h3>
+            <p>
+              O endereço oficial, rotas e pontos de referência estão preparados para serem integrados assim que forem oficialmente informados.
+            </p>
+            <div style="display: flex; flex-direction: column; gap: var(--space-xs); margin-top: var(--space-sm);">
+              <a href="#" class="btn btn-secondary-dark btn-full" id="btnGoogleMaps">Abrir no Google Maps</a>
+              <a href="#" class="btn btn-whatsapp btn-full js-whatsapp-link" data-message="Olá! Gostaria de receber a localização exata do Espaço de Eventos Samuel Lucas.">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                Falar pelo WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <div class="location-map-wrap">
+            <div class="map-placeholder-box">
+              <div class="map-placeholder-icon">📍</div>
+              <strong>Visualização do Mapa</strong>
+              <p style="font-size: 0.82rem; margin-top: 4px;">Disponível no Google Maps</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         INSTAGRAM
+         ========================================================================== -->
+    <section class="section" id="instagram">
+      <div class="container">
+        <header class="section-header text-center">
+          <span class="text-overline">Redes Sociais</span>
+          <h2>Acompanhe nossos eventos</h2>
+          <p>Inspire-se com os momentos especiais e bastidores vividos aqui.</p>
+        </header>
+
+        <div class="instagram-grid">
+          <div class="instagram-thumb">
+            <img src="assets/images/casamentos.jpg" alt="Post Instagram Casamento" loading="lazy">
+            <div class="instagram-thumb-overlay">📷</div>
+          </div>
+          <div class="instagram-thumb">
+            <img src="assets/images/15-anos.jpg" alt="Post Instagram 15 Anos" loading="lazy">
+            <div class="instagram-thumb-overlay">📷</div>
+          </div>
+          <div class="instagram-thumb">
+            <img src="assets/images/aniversarios.jpg" alt="Post Instagram Aniversário" loading="lazy">
+            <div class="instagram-thumb-overlay">📷</div>
+          </div>
+          <div class="instagram-thumb">
+            <img src="assets/images/espaco-salao.jpg" alt="Post Instagram Salão Principal" loading="lazy">
+            <div class="instagram-thumb-overlay">📷</div>
+          </div>
+        </div>
+
+        <div style="text-align: center;">
+          <a href="#" class="btn btn-secondary-dark" id="btnInstagram">Ver Instagram</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/images/logo-light.svg" alt="Espaço de Eventos Samuel Lucas" class="brand-logo-img">
+          <p>
+            O cenário perfeito para transformar casamentos, aniversários, 15 anos e eventos corporativos em experiências inesquecíveis.
+          </p>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Navegação</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#espaco">O Espaço</a></li>
+            <li><a href="#eventos">Eventos</a></li>
+            <li><a href="#estrutura">Estrutura</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#orcamento">Orçamento</a></li>
+            <li><a href="#localizacao">Localização</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Atendimento</h4>
+          <ul class="footer-nav-list">
+            <li>
+              <a href="#orcamento" class="js-whatsapp-link" data-message="Olá! Gostaria de falar com o atendimento do Espaço de Eventos Samuel Lucas.">
+                WhatsApp Oficial
+              </a>
+            </li>
+            <li><a href="#instagram">Instagram</a></li>
+            <li><a href="#localizacao">Localização e Visitas</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Espaço de Eventos Samuel Lucas. Todos os direitos reservados.
+        </div>
+        <div>
+          Desenvolvido com excelência e sofisticação mobile-first.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       WHATSAPP FLOATING BAR (MOBILE-FIRST CRITICAL CTA)
+       ========================================================================== -->
+  <div class="whatsapp-bottom-bar" id="whatsappBottomBar">
+    <a href="#" class="whatsapp-bottom-btn" id="floatingWhatsappBtn" target="_blank" rel="noopener noreferrer" aria-label="Solicitar orçamento pelo WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      Solicitar Orçamento
+    </a>
+  </div>
+
+  <!-- ==========================================================================
+       LIGHTBOX MODAL
+       ========================================================================== -->
+  <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Visualizador de fotos em tela cheia">
+    <button class="lightbox-close-btn" id="lightboxClose" aria-label="Fechar visualizador">&times;</button>
+    <button class="lightbox-prev-btn" id="lightboxPrev" aria-label="Foto anterior">&#10094;</button>
+    <button class="lightbox-next-btn" id="lightboxNext" aria-label="Próxima foto">&#10095;</button>
+
+    <div class="lightbox-img-wrapper">
+      <img src="" alt="" class="lightbox-img" id="lightboxImg">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notice -->
+  <div class="toast-notice" id="toastNotice">
+    <span>💬</span>
+    <span class="toast-msg">Mensagem</span>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
